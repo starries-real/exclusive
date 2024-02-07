@@ -1,4 +1,4 @@
-## -- Starries Helper --
+### Starries Helper
 
 | Growid | Userid  | Second Account | Date | Ticketid |
 | :---: | :---: | :---: | :---: | :---: |
