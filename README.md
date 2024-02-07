@@ -1,4 +1,4 @@
-# STARRIES HELPER DATABASE
+## STARRIES HELPER
 
 | Growid | Userid  | Second account |
 | ------- | --- | --- |
