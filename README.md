@@ -1,6 +1,6 @@
 ## -- Starries Helper --
 
-| Growid | Userid  | Second account | Date | Ticketid |
+| Growid | Userid  | Second Account | Date | Ticketid |
 | :---: | :---: | :---: | :---: | :---: |
 | Murad | 37962 | 35145 | 01/25/2024 8:39 PM | ticket-140 |
 | Petrickkk | 543532 | - |
