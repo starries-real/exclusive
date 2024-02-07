@@ -1,4 +1,4 @@
-## STARRIES HELPER
+## -- [[ Starries Helper ]] --
 
 | Growid | Userid  | Second account |
 | ------- | --- | --- |
@@ -6,7 +6,7 @@
 | Petrickkk | 543532 | - |
 | Payon | 110580 | - |
 
-## STAR18
+## -- [[ Invalid ]] --
 
 | Growid | Userid  | Second account |
 | ------- | --- | --- |
