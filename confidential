@@ -2,8 +2,7 @@ StarriesHelper = {85923, 37962, 543532, 668165, 35145, 110580}
 
 Star18 = {556966}
 
-CasinoHelper = {85923}
-
-BetaTester = true
+BetaUser = {85923}
+BetaPeriod = true
 
 RegisterNewUid = {35145}
