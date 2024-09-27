@@ -1,16 +1,1 @@
-local jsonString = {"Helper":[9124,9125,1000,1001]}
-
--- Memuat dkjson
-local json = require("dkjson")
-
--- Melakukan parsing
-local data, pos, err = json.decode(jsonString, 1, nil)
-
-if err then
-    print("Error:", err)
-else
-    -- Mengakses angka dalam array Helper
-    for i, v in ipairs(data.Helper) do
-        print(v)  -- Ini akan mencetak setiap angka ke konsol
-    end
-end
+{"Helper":[9124,9125,1000,1001]}
