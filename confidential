@@ -10,5 +10,9 @@ BOTHEX = {
     PRO = {},
     RESELLER = {},
     ON_TRIAL = {}
-  }
+  },
+ CASINO_HELPER = {
+    CLUB = {},
+    PRO = {}
+ }
 }
