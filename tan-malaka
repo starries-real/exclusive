@@ -1,4 +1,4 @@
-PREFIX, OWNER = "/", "`w[`bTann18`w] "
+PREFIX, OWNER = "/", "`w[`bMeFatz`w] "
 PRIMARY_COLOR, SECONDARY_COLOR = "w", "c"
 DROP_LOG_TABLE, TAKE_LOG_TABLE, SPIN_LOG_TABLE = {}, {}, {}
 
