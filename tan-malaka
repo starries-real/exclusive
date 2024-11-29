@@ -127,7 +127,7 @@ return false end)
 
 AddHook("OnVariant", "VARIANT-MAIN", function(V) 
 if V[0] == "OnConsoleMessage" and V[1]:find("`$World Locked`` by") then RunThread(function() LOGC(V[1]) Sleep(50) LOGT("`5Proxy By "..OWNER.." (shy)") if SPAMMING_TEXT ~= nil then Sleep(1000) LOGT("/setspam "..SPAMMING_TEXT) end end) return true end  
-if V[0] == "OnSDBroadcast" and BLOCK_SDB then LOGL("Super Duper Broadcast `4Blocked") return true
+if V[0] == "OnSDBroadcast" and BLOCK_SDB then LOGL("Super Duper Broadcast `4Blocked") return true end
 return false end)
 
 AddHook("OnSendPacket", "PACKET-SPAM", function(T, S) if S == nil then return end local VALUE, BUTTON, TOGGLE = SPLIT(S:gsub("action|input\n|text|", ""), " "), S:match("buttonClicked|(%S+)"), S if VALUE == nil or VALUE[1] == nil or VALUE == "" or VALUE[1] == "" then return end COMMAND = VALUE[1]:lower() if COMMAND == PREFIX.."set" and VALUE[2] then SPAMMING_TEXT = S:match("/set (.+)") LOGC("Spamming set to : "..SPAMMING_TEXT) return true elseif COMMAND == PREFIX.."set" and not VALUE[2] then LOGC("Provide the spam text! Type : /set <text>") return true end if COMMAND == PREFIX.."spam" then if SPAMMING_TEXT == nil or SPAMMING_TEXT == "" or SPAMMING_TEXT == " " then LOGC("Provide spamming text first! Type : /set <text>") return true end if SPAM_MODE == nil or SPAM_MODE == false then DODGE_SPAM = true SPAM_MODE = true RunThread(function() SendPacket(2, "action|dialog_return\ndialog_name|cheats\ncheck_autospam|1") Sleep(600) LOGT("/setspam "..SPAMMING_TEXT) end) LOGC("Spam Mode `2Enabled") else SPAM_MODE = false SendPacket(2, "action|dialog_return\ndialog_name|cheats\ncheck_autospam|0") LOGC("Spam Mode `4Disabled") end return true end return false end)
