@@ -1,4 +1,4 @@
-PREFIX, OWNER = "/", "`w[`bMeFatz`w] "
+PREFIX, OWNER = "/", "`w[`bTann18`w] "
 PRIMARY_COLOR, SECONDARY_COLOR = "w", "c"
 DROP_LOG_TABLE, TAKE_LOG_TABLE, SPIN_LOG_TABLE = {}, {}, {}
 
@@ -124,6 +124,10 @@ if COMMAND == PREFIX.."bl" and tonumber(VALUE[2]) then local DROP_LOCK = tonumbe
 if COMMAND == PREFIX.."bg" and tonumber(VALUE[2]) then local DROP_LOCK = tonumber(VALUE[2]) if tonumber(VALUE[2]) == nil or tonumber(VALUE[2]) == 0 then LOGC("Please provide the exact number!") return true elseif tonumber(VALUE[2]) > GET_ITEM_AMOUNT(11550) then LOGC("You don't have enough that item!") else DROP(11550, VALUE[2]) LOGC("Dropping `w" .. VALUE[2] .. " `bBlack Gem Lock") LOGT(OWNER.."Dropping `w" .. VALUE[2] .. " `bBlack Gem Lock") table.insert(DROP_LOG_TABLE, {DROP = "\nadd_label_with_icon|small|"..GetLocal().name.." `oDropped `w"..DROP_LOCK.." `bBlack Gem Lock `oat "..os.date("%H:%M on %d/%m").."|left|"..GetItemInfo("Growmoji Wow Block").id.."|\n", NET_ID = GetLocal().netID}) end return true end
 return false end)
 
+AddHook("OnVariant", "VARIANT-MAIN", function(V) 
+if V[0] == "OnConsoleMessage" and V[1]:find("`$World Locked`` by (.+)`5]") then WORLD_LOCKED = V[1]:match("`$World Locked`` by (.+)`5]") RunThread(function() LOGL("World locked by "..WORLD_LOCKED) LOGC(V[1]) Sleep(70) LOGT("`5Proxy By "..OWNER.." (shy)") Sleep(1000) LOGT("/setspam "..SPAMMING_TEXT) end) return true end  
+return false end)
+
 AddHook("OnSendPacket", "PACKET-SPAM", function(T, S) if S == nil then return end local VALUE, BUTTON, TOGGLE = SPLIT(S:gsub("action|input\n|text|", ""), " "), S:match("buttonClicked|(%S+)"), S if VALUE == nil or VALUE[1] == nil or VALUE == "" or VALUE[1] == "" then return end COMMAND = VALUE[1]:lower() if COMMAND == PREFIX.."set" and VALUE[2] then SPAMMING_TEXT = S:match("/set (.+)") LOGC("Spamming set to : "..SPAMMING_TEXT) return true elseif COMMAND == PREFIX.."set" and not VALUE[2] then LOGC("Provide the spam text! Type : /set <text>") return true end if COMMAND == PREFIX.."spam" then if SPAMMING_TEXT == nil or SPAMMING_TEXT == "" or SPAMMING_TEXT == " " then LOGC("Provide spamming text first! Type : /set <text>") return true end if SPAM_MODE == nil or SPAM_MODE == false then DODGE_SPAM = true SPAM_MODE = true RunThread(function() SendPacket(2, "action|dialog_return\ndialog_name|cheats\ncheck_autospam|1") Sleep(600) LOGT("/setspam "..SPAMMING_TEXT) end) LOGC("Spam Mode `2Enabled") else SPAM_MODE = false SendPacket(2, "action|dialog_return\ndialog_name|cheats\ncheck_autospam|0") LOGC("Spam Mode `4Disabled") end return true end return false end)
 AddHook("OnVariant", "VARIANT-SPAM", function(V) if V[0] == "OnDialogRequest" and DODGE_SPAM then DODGE_SPAM = false return true end return false end)
 
@@ -132,7 +136,7 @@ function HOOK_WRENCH(V)
         W = V[1]
         X = tonumber(W:match("embed_data|netID|(%d+)")) PULLED_NAME = GET_NAME(X)
         SendPacket(2, "action|dialog_return\ndialog_name|popup\nnetID|" .. X .. "|\nbuttonClicked|pull")
-        LOGL("Pulling "..PULLED_NAME) if PULL_BUBBLE_MODE then CHAT("Gas "..PULLED_NAME.." ?") end
+        LOGL("Pulling "..PULLED_NAME) if PULL_BUBBLE_MODE then LOGT("Gas "..PULLED_NAME.." ?") end
         return true
     end
 end
