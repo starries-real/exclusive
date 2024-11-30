@@ -267,7 +267,7 @@ if CUSTOM_CHAT and S:find("action|input\n|text|") then
  ARGS = string.gsub(S, "action|input\n|text|", "")
  if ARGS:sub(1, 1) == "/" or ARGS:sub(5, 5) == "(" or ARGS:sub(5, 5) == ")"or ARGS:sub(5, 5) == "5" then return false end 
  TEXT = ARGS MESSAGE = ""
- if COLOR_MODE == "RANDOM" then for v in text:gmatch("(.)") do MESSAGE = MESSAGE.. "`"..RANDOM_COLOR[math.random(1, #RANDOM_COLOR)].. v end SendPacket(2,"action|input\n|text|"..EMOJI_SELECTED.." : "..MESSAGE)
+ if COLOR_MODE == "RANDOM" then for v in TEXT:gmatch("(.)") do MESSAGE = MESSAGE.. "`"..RANDOM_COLOR[math.random(1, #RANDOM_COLOR)].. v end SendPacket(2,"action|input\n|text|"..EMOJI_SELECTED.." : "..MESSAGE)
  elseif COLOR_MODE == "CUSTOM" then SendPacket(2,"action|input\n|text|"..EMOJI_SELECTED.." : `"..COLOR_SELECTED..""..ARGS) 
  else SendPacket(2, "action|input\n|text|"..EMOJI_SELECTED.." : "..ARGS) end
 return true end
