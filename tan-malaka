@@ -64,6 +64,13 @@ add_label_with_icon|small|]]..PREFIX..[[res : Respawn yourself|left|]]..GetItemI
 add_label_with_icon|small|]]..PREFIX..[[relog : Relogging to current world|left|]]..GetItemInfo("One-Way Block").id..[[|
 add_label_with_icon|small|]]..PREFIX..[[modal : Show your balance or modal|left|]]..GetItemInfo("One-Way Block").id..[[|
 add_spacer|small|
+add_textbox|Chat / Emoji Commands|
+add_spacer|small|
+add_smalltext|`2Commands :|left|
+add_label_with_icon|small|]]..PREFIX..[[chat : Open the chat menu|left|]]..GetItemInfo("One-Way Block").id..[[|
+add_label_with_icon|small|]]..PREFIX..[[emojichat : Toggle the emoji chat mode|left|]]..GetItemInfo("One-Way Block").id..[[|
+add_label_with_icon|small|]]..PREFIX..[[colorchat : Toggle the color chat mode|left|]]..GetItemInfo("One-Way Block").id..[[|
+add_spacer|small|
 add_textbox|Logs Commands|
 add_spacer|small|
 add_smalltext|`2Commands :|left|
@@ -101,13 +108,6 @@ add_label_with_icon|small|]]..PREFIX..[[mkb : Merge the 100 Blue Gem Lock into B
 add_label_with_icon|small|]]..PREFIX..[[bkb : Shatter the 1 Black Gem Lock into 100 Blue Gem Lock|left|]]..GetItemInfo("One-Way Block").id..[[|
 add_label_with_icon|small|]]..PREFIX..[[dp <amount> : Deposit your Blue Gem Lock|left|]]..GetItemInfo("One-Way Block").id..[[|
 add_label_with_icon|small|]]..PREFIX..[[wd <amount> : Withdraw your Blue Gem Lock|left|]]..GetItemInfo("One-Way Block").id..[[|
-add_spacer|small|
-add_textbox|Chat / Emoji Commands|
-add_spacer|small|
-add_smalltext|`2Commands :|left|
-add_label_with_icon|small|]]..PREFIX..[[chat : Open the chat menu|left|]]..GetItemInfo("One-Way Block").id..[[|
-add_label_with_icon|small|]]..PREFIX..[[emojichat : Toggle the emoji chat mode|left|]]..GetItemInfo("One-Way Block").id..[[|
-add_label_with_icon|small|]]..PREFIX..[[colorchat : Toggle the color chat mode|left|]]..GetItemInfo("One-Way Block").id..[[|
 add_spacer|small|
 add_quick_exit|
 add_spacer|small|
