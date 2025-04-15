@@ -4,11 +4,11 @@ return {
         {userid = 67890, discordid = "987654321", adminid = "admin2", addedAt = "2025-04-02 14:30:00"}
     },
     admins = {
-        {userid = 85923, adminid = "admin1", permissions = {"all"}},
+        {userid = 3333, adminid = "admin1", permissions = {"all"}},
         {userid = 2222, adminid = "admin2", permissions = {"all"}}
     },
     resellers = {
-        {userid = 3333, adminid = "reseller1", permissions = {"add_user"}},
+        {userid = 85923, adminid = "reseller1", permissions = {"add_user"}},
         {userid = 4444, adminid = "reseller2", permissions = {"add_user"}}
     }
 }
